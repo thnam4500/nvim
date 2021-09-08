@@ -8,6 +8,14 @@ call plug#begin('~/.vim/plugged')
     " Nerdtree
     Plug 'preservim/nerdtree'
 
+    " Snippet
+    Plug 'honza/vim-snippets'
+    
+    " Status bar
+    Plug   'vim-airline/vim-airline'
+    Plug   'vim-airline/vim-airline-themes'
 
+    " Debugger
+    Plug   'puremourning/vimspector'
 
 call plug#end()

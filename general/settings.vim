@@ -17,7 +17,7 @@ set autoindent
 set number
 set relativenumber
 set cursorline				" Enable highlight all the current line
-set laststatus=0      " Always display the status line
-
+set laststatus=0            " Always display the status line
+set clipboard=unnamedplus   " Copy to global clipboard
 au! BufWritePost $MYVIMRC source %	" Auto source when writing to init.vim alternatively you can run :source $MYVIMRC
 

@@ -38,3 +38,7 @@ map <leader>l $
 
 " Split line from current position
 map <leader>o i<enter><esc>
+
+
+" Change tabbing
+nmap <leader>t :buffer 1
