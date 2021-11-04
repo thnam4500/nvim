@@ -3,6 +3,5 @@ source $HOME/.config/nvim/plugins/plugins.vim
 source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/themes/onedark.vim
 source $HOME/.config/nvim/plugins/coc.vim
-source $HOME/.config/nvim/plugins/nerdtree.vim
 source $HOME/.config/nvim/plugins/airline.vim
-source $HOME/.config/nvim/plugins/Vimspector.vim
+source $HOME/.config/nvim/plugins/floaterm.vim

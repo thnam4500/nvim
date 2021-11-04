@@ -18,4 +18,7 @@ call plug#begin('~/.vim/plugged')
     " Debugger
     Plug   'puremourning/vimspector'
 
+    " Floating terminal
+    Plug 'voldikss/vim-floaterm'
+
 call plug#end()
