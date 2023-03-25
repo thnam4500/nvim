@@ -18,7 +18,7 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
   use 'nvim-treesitter/nvim-treesitter'
-  use 'ellisonleao/gruvbox.nvim'
+  use "EdenEast/nightfox.nvim"
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
 	  requires = { {'nvim-lua/plenary.nvim'} }
@@ -43,8 +43,12 @@ return require('packer').startup(function(use)
 	"windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
   }
+
+  use 'preservim/tagbar'
+  use 'glepnir/dashboard-nvim'
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
+  use "terrortylor/nvim-comment"
   if packer_bootstrap then
     require('packer').sync()
   end
