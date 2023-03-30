@@ -14,7 +14,7 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   -- My plugins here
-  use 'nvim-tree/nvim-tree.lua'
+  -- use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
   use 'nvim-treesitter/nvim-treesitter'
@@ -41,14 +41,20 @@ return require('packer').startup(function(use)
   }
   use {
 	"windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
+    config = function() require("nvim-autopairs").setup {disable_filetype = { "TelescopePrompt" , "guihua", "guihua_rust", "clap_input" },} end
   }
 
-  use 'preservim/tagbar'
+  -- use 'preservim/tagbar'
   use 'glepnir/dashboard-nvim'
+  use "terrortylor/nvim-comment"
+  use 'ray-x/go.nvim'
+  use 'ray-x/guihua.lua'
+  -- use 'codota/tabnine-vim'
+  use 'akinsho/toggleterm.nvim'
+  use 'aserowy/tmux.nvim'
+  use 'ms-jpq/chadtree'
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
-  use "terrortylor/nvim-comment"
   if packer_bootstrap then
     require('packer').sync()
   end

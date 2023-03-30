@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup {
-    ensure_installed = { "lua_ls", "rust_analyzer","gopls" },
+    ensure_installed = { "lua_ls", "rust_analyzer","gopls"},
 }
 
 local on_attach = function(_,bufnr)
@@ -15,9 +15,30 @@ local on_attach = function(_,bufnr)
 end
 
 require("lspconfig").gopls.setup{
+  cmd = {'gopls'},
+  settings = {
+    gopls = {
+      analyses = {
+        nilness = true,
+        unusedparams = true,
+        unusedwrite = true,
+        useany = true,
+      },
+      experimentalPostfixCompletions = true,
+      gofumpt = true,
+      staticcheck = true,
+      usePlaceholders = true,
+    },
+  },
 	on_attach = on_attach
 }
-require("lspconfig").lua_ls.setup{
-	on_attach = on_attach
-}
+
+local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function()
+   require('go.format').goimport()
+  end,
+  group = format_sync_grp,
+})
 
