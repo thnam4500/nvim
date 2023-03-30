@@ -1,13 +1,7 @@
 require("toggleterm").setup {
-  size = function(term)
-    if term.direction == "horizontal" then
-      return 10
-    elseif term.direction == "vertical" then
-      return vim.o.columns * 0.2
-    end
-  end,
-
+  size = 10,
+  persist_size = false,
   close_on_exit = true,
-  direction = 'float',
+  direction = 'horizontal',
   open_mapping = [[<c-\>]]
 }
