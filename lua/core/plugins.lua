@@ -41,8 +41,10 @@ return require('packer').startup(function(use)
   }
   use {
     "windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup { disable_filetype = { "TelescopePrompt", "guihua",
-        "guihua_rust", "clap_input" }, } end
+    config = function()
+      require("nvim-autopairs").setup { disable_filetype = { "TelescopePrompt", "guihua",
+        "guihua_rust", "clap_input" }, }
+    end
   }
 
   -- use 'preservim/tagbar'
@@ -56,6 +58,7 @@ return require('packer').startup(function(use)
   use 'aserowy/tmux.nvim'
   use 'ms-jpq/chadtree'
   use 'xiyaowong/transparent.nvim'
+  use 'EtiamNullam/deferred-clipboard.nvim'
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
