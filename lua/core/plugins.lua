@@ -55,7 +55,7 @@ return require('packer').startup(function(use)
   use 'ray-x/guihua.lua'
   -- use 'codota/tabnine-vim'
   use 'akinsho/toggleterm.nvim'
-  use 'aserowy/tmux.nvim'
+  use "alexghergh/nvim-tmux-navigation"
   use 'ms-jpq/chadtree'
   use 'xiyaowong/transparent.nvim'
   use 'EtiamNullam/deferred-clipboard.nvim'
