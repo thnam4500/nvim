@@ -13,7 +13,7 @@ vim.api.nvim_set_keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(
 vim.keymap.set("n", "<leader>v", "<C-w>v")
 vim.keymap.set("n", "<leader>h", "<C-w>s")
 vim.keymap.set("n", "<leader>e", "<C-w>=")
-vim.keymap.set("n", "<leader>x", ":close<CR>")
+vim.keymap.set("n", "<leader>q", ":close<CR>")
 
 -- tab
 vim.keymap.set("n", "<leader>to", ":tabnew<CR>")

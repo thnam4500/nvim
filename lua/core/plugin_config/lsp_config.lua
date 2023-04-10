@@ -24,13 +24,11 @@ local on_attach = function(_, bufnr)
 end
 
 
-local coq = require "coq"
 require("lspconfig").jsonls.setup({})
 require("lspconfig").docker_compose_language_service.setup({})
 require("lspconfig").yamlls.setup({})
 require("lspconfig").dockerls.setup({})
 require("lspconfig").gopls.setup {
-  coq.lsp_ensure_capabilities(),
   cmd = { 'gopls' },
   settings = {
     gopls = {
