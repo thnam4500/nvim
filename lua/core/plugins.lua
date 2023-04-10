@@ -57,8 +57,6 @@ return require('packer').startup(function(use)
   use 'akinsho/toggleterm.nvim'
   use "alexghergh/nvim-tmux-navigation"
   use 'ms-jpq/chadtree'
-  use 'xiyaowong/transparent.nvim'
-  use 'EtiamNullam/deferred-clipboard.nvim'
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

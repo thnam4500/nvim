@@ -9,6 +9,8 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.backspace = "indent,eol,start"
 
+vim.opt.clipboard:append("unnamedplus")
+
 
 vim.cmd [[ set noswapfile ]]
 vim.opt.termguicolors = true
