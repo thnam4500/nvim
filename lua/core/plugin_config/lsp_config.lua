@@ -7,9 +7,11 @@ require("mason-lspconfig").setup {
     "dockerls",
     "docker_compose_language_service",
     "yamlls",
-    "jsonls"
+    "jsonls",
+    "bufls",
   },
 }
+
 
 local on_attach = function(_, _)
   vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
@@ -23,21 +25,15 @@ local on_attach = function(_, _)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 end
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    -- Thay `location` bằng `quickfix` để sử dụng quickfix list
-    virtual_text = false,
-    update_in_insert = false,
-    signs = true,
-    underline = true,
-  }
-)
-
+require("lspconfig").bufls.setup({})
 require("lspconfig").jsonls.setup({})
 require("lspconfig").docker_compose_language_service.setup({})
 require("lspconfig").yamlls.setup({})
 require("lspconfig").dockerls.setup({})
 require("lspconfig").gopls.setup {
+  diagnostics = {
+    virtual_text = true,
+  },
   cmd = { 'gopls' },
   settings = {
     gopls = {
@@ -50,7 +46,7 @@ require("lspconfig").gopls.setup {
       experimentalPostfixCompletions = true,
       gofumpt = true,
       staticcheck = true,
-      usePlaceholders = true,
+      usePlaceholders = false,
     },
   },
   on_attach = on_attach
