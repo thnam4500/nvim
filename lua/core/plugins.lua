@@ -12,7 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-  'wbthomason/packer.nvim',
   -- My plugins here
   -- use 'nvim-tree/nvim-tree.lua',
   'nvim-tree/nvim-web-devicons',
@@ -48,13 +47,9 @@ local plugins = {
     end
   },
 
+  "fatih/vim-go",
   -- use 'preservim/tagbar'
-  'glepnir/dashboard-nvim',
   "terrortylor/nvim-comment",
-  'ray-x/navigator.lua',
-  'ray-x/go.nvim',
-  'ray-x/guihua.lua',
-  -- use 'codota/tabnine-vim'
   'akinsho/toggleterm.nvim',
   "alexghergh/nvim-tmux-navigation",
   'ms-jpq/chadtree',

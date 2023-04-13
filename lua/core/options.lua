@@ -16,5 +16,6 @@ vim.cmd [[ set noswapfile ]]
 vim.opt.termguicolors = true
 
 --Line numbers
+vim.opt.number = true
+vim.opt.relativenumber = true
 vim.o.number = true
-vim.o.relativenumber = true

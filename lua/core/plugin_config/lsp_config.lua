@@ -8,7 +8,6 @@ require("mason-lspconfig").setup {
     "docker_compose_language_service",
     "yamlls",
     "jsonls",
-    "bufls",
   },
 }
 
@@ -30,27 +29,7 @@ require("lspconfig").jsonls.setup({})
 require("lspconfig").docker_compose_language_service.setup({})
 require("lspconfig").yamlls.setup({})
 require("lspconfig").dockerls.setup({})
-require("lspconfig").gopls.setup {
-  diagnostics = {
-    virtual_text = true,
-  },
-  cmd = { 'gopls' },
-  settings = {
-    gopls = {
-      analyses = {
-        nilness = true,
-        unusedparams = true,
-        unusedwrite = true,
-        useany = true,
-      },
-      experimentalPostfixCompletions = true,
-      gofumpt = true,
-      staticcheck = true,
-      usePlaceholders = false,
-    },
-  },
-  on_attach = on_attach
-}
+require("lspconfig").gopls.setup({})
 
 local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
